@@ -1,0 +1,81 @@
+/* =========================
+   PROJECTS SECTION
+========================= */
+.projects {
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.projects-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: inherit; /* theme-safe */
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+.project-card {
+  background-color: #111;        /* card background */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* PROJECT NAME */
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* =========================
+   DESCRIPTION & TECH
+========================= */
+.project-desc {
+  font-size: 15px;
+  color: #cfcfcf;
+  margin-bottom: 15px;
+}
+
+.project-tech {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #dddddd;
+}
+
+/* =========================
+   FEATURES LIST
+========================= */
+.project-features {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.project-features li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #cfcfcf;
+}
+
+/* =========================
+   GITHUB / ACTION LINK
+========================= */
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffffff;
+  background-color: #2563eb;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.project-link:hover {
+  background-color: #1e40af;
+}

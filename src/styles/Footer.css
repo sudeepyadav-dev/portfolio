@@ -1,0 +1,83 @@
+/* =========================
+   FOOTER WRAPPER
+========================= */
+.footer {
+  background-color: #0b0b0f;      /* Dark background */
+  padding: 80px 20px 30px;        /* Top | Left-Right | Bottom spacing */
+}
+
+/* =========================
+   CENTERED CONTENT GRID
+========================= */
+.footer-container {
+  max-width: 1000px;              /* Footer content width */
+  margin: 0 auto;                 /* Center footer block */
+  display: grid;                  /* Grid layout for columns */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 120px;                     /* Space between columns */
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+.footer-col {
+  text-align: left;               /* Left align text (desktop) */
+}
+
+/* Name / Title */
+.footer-col h4 {
+  color: #ffffff;                 /* White heading */
+  font-size: 19px;                /* Slightly bigger font */
+  margin-bottom: 10px;
+}
+
+/* Role / Description */
+.footer-col p {
+  color: #9a9a9a;                 /* Muted text */
+  font-size: 15px;                /* Increased readability */
+  margin-bottom: 22px;
+}
+
+/* =========================
+   FOOTER LINKS
+========================= */
+.footer-col a {
+  display: block;                 /* Each link on new line */
+  color: #8b8b8b;                 /* Soft grey */
+  text-decoration: none;          /* Remove underline */
+  font-size: 15px;                /* Bigger link text */
+  margin-bottom: 12px;
+  transition: color 0.3s ease;    /* Smooth hover */
+}
+
+/* Hover effect */
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   BOTTOM COPYRIGHT
+========================= */
+.footer-bottom {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-top: 50px;
+  border-top: 1px solid #1f1f1f;
+  padding-top: 20px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;   /* Stack columns */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-col {
+    text-align: center;           /* Center text on mobile */
+  }
+}

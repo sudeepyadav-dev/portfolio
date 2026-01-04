@@ -1,0 +1,63 @@
+/* =====================================================
+   RESET
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   LIGHT THEME (DEFAULT)
+   ===================================================== */
+:root {
+  /* App colors */
+  --bg: #ffffff;
+  --text: #111111;
+
+  /* Navbar */
+  --nav-bg: #ffffff;
+  --nav-text: #111111;
+
+  /* Brand */
+  --primary: #2563eb;
+
+  /* Hero text (LIGHT MODE) */
+  --hero-title: #111111;
+  --hero-sub: #1f2937;
+  --hero-desc: #374151;
+}
+
+/* =====================================================
+   DARK THEME
+   ===================================================== */
+[data-theme="dark"] {
+  --bg: #0f0f0f;
+  --text: #ffffff;
+
+  --nav-bg: #000000;
+  --nav-text: #e5e7eb;
+
+  --primary: #4f7cff;
+
+  /* Hero text (DARK MODE) */
+  --hero-title: #ffffff;
+  --hero-sub: #cbd5f5;
+  --hero-desc: #e5e7eb;
+}
+
+/* =====================================================
+   BODY
+   ===================================================== */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
