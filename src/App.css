@@ -450,3 +450,63 @@
   }
 }
 
+
+/* =====================================================
+   📱 MOBILE HAMBURGER NAVBAR (ONLY MOBILE)
+   ===================================================== */
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  cursor: pointer;
+}
+
+/* Mobile menu container */
+.mobile-menu {
+  display: none;
+}
+
+/* ===============================
+   MOBILE ONLY
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Hide desktop nav links */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show hamburger icon */
+  .hamburger {
+    display: block;
+  }
+
+  /* Mobile dropdown menu */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px; /* navbar height */
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    padding: 16px 0;
+    z-index: 999;
+  }
+
+  .mobile-menu a {
+    padding: 14px 24px;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
