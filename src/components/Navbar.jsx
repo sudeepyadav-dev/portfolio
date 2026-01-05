@@ -26,9 +26,15 @@ function Navbar() {
     <header className="nav-wrapper">
 
       {/* ===============================
-          LOGO / NAME
+          LEFT LOGO (THEME ICON)
          =============================== */}
-      <div className="nav-logo">Sudeep</div>
+      <button
+        className="theme-logo"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? "☀️" : "🌙"}
+      </button>
 
       {/* ===============================
           DESKTOP NAVBAR
@@ -66,14 +72,6 @@ function Navbar() {
           RIGHT ACTIONS
          =============================== */}
       <div className="nav-actions">
-        <button
-          className="theme-btn"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          {theme === "dark" ? "☀️" : "🌙"}
-        </button>
-
-        {/* MOBILE HAMBURGER */}
         <button
           className="hamburger"
           onClick={() => setMobileOpen(!mobileOpen)}
