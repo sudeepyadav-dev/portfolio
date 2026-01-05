@@ -69,23 +69,29 @@
   transform: translateX(-50%);
 }
 
-/* ALL NAV TEXT */
+/* -------------------------------
+   NAV LINKS – HOVER ONLY (FIX 1)
+   ------------------------------- */
+
+/* Normal state */
 .nav-pill a,
 .nav-link {
   font-size: 15px;
   font-weight: 600;
-  color: var(--nav-text);
+  color: var(--nav-text);   /* always normal */
   text-decoration: none;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
+/* ❌ Remove permanent active highlight */
+.nav-pill a.active {
+  color: var(--nav-text);
+}
+
+/* ✅ Only hover par blue */
 .nav-pill a:hover,
 .nav-link:hover {
-  color: var(--primary);
-}
-
-/* ACTIVE LINK */
-.nav-pill a.active {
   color: var(--primary);
 }
 
@@ -150,7 +156,6 @@
   cursor: pointer;
 }
 
-/* MOBILE MENU */
 .mobile-menu {
   display: none;
 }
@@ -160,17 +165,14 @@
    ===================================================== */
 @media (max-width: 768px) {
 
-  /* Hide desktop nav */
   .desktop-nav {
     display: none;
   }
 
-  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
-  /* Mobile menu */
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -200,7 +202,7 @@
 }
 
 /* =====================================================
-   HERO SECTION (UNCHANGED)
+   HERO SECTION
    ===================================================== */
 .hero {
   position: relative;
@@ -256,7 +258,57 @@
   line-height: 1.6;
 }
 
-/* RESPONSIVE HERO */
+/* =====================================================
+   HERO BUTTONS – ALWAYS BLUE (FIX 2)
+   ===================================================== */
+.hero-actions {
+  display: flex;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+/* Hire Me */
+.btn-primary {
+  background: var(--primary);   /* always blue */
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  opacity: 0.95;
+}
+
+/* View Projects */
+.btn-outline {
+  background: var(--primary);   /* always blue */
+  color: #ffffff;
+  border: 1.5px solid var(--primary);
+  padding: 12px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* =====================================================
+   RESPONSIVE HERO
+   ===================================================== */
 @media (max-width: 768px) {
   .hero {
     padding: 40px 24px;
