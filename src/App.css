@@ -8,7 +8,7 @@
 }
 
 /* =====================================================
-   NAVBAR (FLAT BAR)
+   NAVBAR (STABLE – NO BREAKING)
    ===================================================== */
 .nav-wrapper {
   position: sticky;
@@ -21,14 +21,13 @@
 
   display: flex;
   align-items: center;
-
-  /* LEFT (theme) | CENTER (links) | RIGHT (hamburger) */
   justify-content: space-between;
+
   padding: 0 24px;
 }
 
 /* =====================================================
-   LEFT THEME LOGO (SUN / MOON)
+   LEFT THEME LOGO
    ===================================================== */
 .theme-logo {
   width: 44px;
@@ -47,75 +46,56 @@
   justify-content: center;
 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .theme-logo:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
 }
 
 /* =====================================================
-   CENTER NAV LINKS (DESKTOP)
+   DESKTOP NAV LINKS (CENTER – SAFE)
    ===================================================== */
 .nav-pill {
   display: flex;
   gap: 28px;
-  background: transparent;
-
-  /* Perfect center alignment */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;      /* 🔥 SAFE CENTERING */
 }
 
-/* -------------------------------
-   NAV LINKS – HOVER ONLY (FIX 1)
-   ------------------------------- */
-
-/* Normal state */
+/* Nav text */
 .nav-pill a,
 .nav-link {
   font-size: 15px;
   font-weight: 600;
-  color: var(--nav-text);   /* always normal */
+  color: var(--nav-text);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
-/* ❌ Remove permanent active highlight */
+/* ❌ No permanent active highlight */
 .nav-pill a.active {
   color: var(--nav-text);
 }
 
-/* ✅ Only hover par blue */
+/* ✅ Hover only */
 .nav-pill a:hover,
 .nav-link:hover {
   color: var(--primary);
 }
 
 /* =====================================================
-   RIGHT ACTIONS (HAMBURGER ONLY)
-   ===================================================== */
-.nav-actions {
-  display: flex;
-  align-items: center;
-}
-
-/* =====================================================
-   CONTENT DROPDOWN
+   DROPDOWN
    ===================================================== */
 .nav-dropdown {
   position: relative;
 }
 
 .nav-link .arrow {
-  font-weight: 600;
   margin-left: 4px;
 }
 
-/* DROPDOWN MENU */
+/* Dropdown box */
 .dropdown-menu {
   position: absolute;
   top: 140%;
@@ -139,13 +119,20 @@
   text-decoration: none;
 }
 
-.dropdown-menu a:hover,
-.dropdown-menu a.active {
+.dropdown-menu a:hover {
   color: var(--primary);
 }
 
 /* =====================================================
-   MOBILE HAMBURGER
+   RIGHT ACTIONS
+   ===================================================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* =====================================================
+   MOBILE NAVBAR
    ===================================================== */
 .hamburger {
   display: none;
@@ -160,23 +147,20 @@
   display: none;
 }
 
-/* =====================================================
-   MOBILE ONLY
-   ===================================================== */
 @media (max-width: 768px) {
 
+  /* Hide desktop links */
   .desktop-nav {
     display: none;
   }
 
+  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
+  /* Mobile menu */
   .mobile-menu {
-    display: flex;
-    flex-direction: column;
-
     position: absolute;
     top: 72px;
     left: 0;
@@ -184,7 +168,10 @@
     width: 100%;
     background: var(--nav-bg);
 
+    display: flex;
+    flex-direction: column;
     padding: 16px 0;
+
     z-index: 999;
   }
 
@@ -207,8 +194,8 @@
 .hero {
   position: relative;
   min-height: calc(100vh - 72px);
-
   width: 100%;
+
   display: flex;
   align-items: center;
 
@@ -236,7 +223,6 @@
   position: relative;
   z-index: 1;
   max-width: 640px;
-  padding-left: 80px;
 }
 
 .hero-left h1 {
@@ -259,7 +245,7 @@
 }
 
 /* =====================================================
-   HERO BUTTONS – ALWAYS BLUE (FIX 2)
+   HERO BUTTONS (ALWAYS BLUE)
    ===================================================== */
 .hero-actions {
   display: flex;
@@ -267,9 +253,9 @@
   margin-top: 28px;
 }
 
-/* Hire Me */
-.btn-primary {
-  background: var(--primary);   /* always blue */
+.btn-primary,
+.btn-outline {
+  background: var(--primary);
   color: #ffffff;
   padding: 12px 26px;
   border-radius: 10px;
@@ -278,29 +264,10 @@
   border: none;
   cursor: pointer;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
-  opacity: 0.95;
-}
-
-/* View Projects */
-.btn-outline {
-  background: var(--primary);   /* always blue */
-  color: #ffffff;
-  border: 1.5px solid var(--primary);
-  padding: 12px 26px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.btn-primary:hover,
 .btn-outline:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
@@ -312,10 +279,6 @@
 @media (max-width: 768px) {
   .hero {
     padding: 40px 24px;
-  }
-
-  .hero-left {
-    padding-left: 0;
   }
 
   .hero-left h1 {
