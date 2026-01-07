@@ -6,7 +6,7 @@ function Navbar() {
   /* ===============================
      THEME STATE
      =============================== */
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   /* ===============================
      DESKTOP CONTENT DROPDOWN
